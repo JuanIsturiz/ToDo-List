@@ -1,0 +1,269 @@
+/* CUSTOM FONT TYPE */
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+/* VARIABLES */
+$dark-gray: #28313b;
+$gray: #576677;
+$light-gray: #8198b3;
+$default-font-size: 1.6rem;
+$defaukt-transition: all 0.1s linear;
+
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* GLOBAL */
+html {
+  font-size: 10px;
+  font-family: "Oxygen", sans-serif;
+  background: linear-gradient(45deg, $dark-gray, #485461);
+  min-height: 100vh;
+}
+
+body {
+  width: 85%;
+  margin: 5rem auto;
+  margin-bottom: 10rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  text-align: center;
+  margin: 3rem auto;
+  h1 {
+    font-size: 3.6rem;
+    color: white;
+    letter-spacing: 0.15rem;
+  }
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: $default-font-size;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* FORM, INPUT, BUTTON AND SELECT*/
+form {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  input {
+    flex: 1;
+    font-size: $default-font-size;
+    color: $light-gray;
+    font-weight: 700;
+    max-width: 50%;
+    min-width: 40rem;
+    padding: 1rem;
+    background-color: $dark-gray;
+    border: $gray 0.25rem solid;
+  }
+  button {
+    font-size: $default-font-size;
+    color: $light-gray;
+    font-weight: 700;
+    padding: 1rem;
+    background-color: $dark-gray;
+    border: $gray 0.25rem solid;
+    transition: $defaukt-transition;
+    &:hover {
+      color: $dark-gray;
+      background-color: $light-gray;
+      border-color: $dark-gray;
+    }
+  }
+  .todos-select {
+    font-family: "Oxygen", sans-serif;
+    padding: 0.8rem 0.2rem;
+    font-size: $default-font-size;
+    font-weight: 700;
+    color: $light-gray;
+    background-color: $dark-gray;
+    border: $gray 0.25rem solid;
+    transition: $defaukt-transition;
+    &:hover {
+      color: $dark-gray;
+      background-color: $light-gray;
+      border-color: $dark-gray;
+    }
+  }
+  > * {
+    margin: 1rem;
+  }
+}
+
+/* TODOS CONTAINER, LIST, TODOS AND BUTTONS */
+.todos-container {
+  width: 60%;
+  margin: auto;
+  .todos-list {
+    list-style: none;
+    width: 100%;
+    margin: 2.5rem auto;
+    i {
+      pointer-events: none;
+    }
+  }
+}
+
+.todo-div {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  background-color: #2d3844;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  border-radius: 0.2rem;
+  > * {
+    font-size: 2.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+  li {
+    word-break: break-all;
+    white-space: normal;
+    padding-left: 0;
+    flex: 1;
+    color: rgb(225, 225, 225);
+  }
+  $check-button-dark: rgb(45, 75, 45);
+  $check-button-light: rgb(90, 160, 90);
+  .check-button {
+    border: $check-button-dark solid 0.2rem;
+    color: $check-button-dark;
+    background-color: $check-button-light;
+    &:hover {
+      border: $check-button-light solid 0.2rem;
+      color: $check-button-light;
+      background-color: $check-button-dark;
+    }
+  }
+  $check-button-dark: rgb(75, 45, 45);
+  $check-button-light: rgb(160, 90, 90);
+  .delete-button {
+    border: $check-button-dark solid 0.2rem;
+    color: $check-button-dark;
+    background-color: $check-button-light;
+    &:hover {
+      border: $check-button-light solid 0.2rem;
+      color: $check-button-light;
+      background-color: $check-button-dark;
+    }
+  }
+}
+
+/* CLEAR ALL SPAN */
+.clear-all {
+  margin: 0 0.5rem;
+  float: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(170, 70, 70);
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.25rem;
+  }
+}
+
+/* JS CLASSES */
+.checked {
+  text-decoration: line-through;
+  text-decoration-color: rgb(225, 225, 225);
+  text-decoration-thickness: 0.25rem;
+  opacity: 0.5;
+}
+
+.removed {
+  opacity: 0;
+  transform: translateX(5px);
+  transition: all 0.3s linear;
+}
+
+.hidden {
+  display: none;
+}
+/* MEDIA FOR TABLETS */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+  body {
+    width: 90%;
+  }
+  form input,
+  form button,
+  form .todos-select {
+    font-size: 2rem;
+  }
+  .todos-select {
+    height: 4.7rem;
+  }
+  .todos-container {
+    width: 80%;
+  }
+}
+/* MEDIA FOR PHONES */
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 7px;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  form {
+    width: 95%;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    input {
+      flex: 1;
+      min-width: auto;
+      border-radius: 0;
+      margin: 0;
+    }
+    button {
+      width: 12rem;
+      margin: 0;
+    }
+    .todos-select {
+      width: 12rem;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+
+  .todos-container {
+    width: 85%;
+  }
+
+  .clear-all {
+    font-size: 2rem;
+    margin-right: 0.75rem;
+  }
+}

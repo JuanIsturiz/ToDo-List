@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/style.css" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/5139251f84.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Dunkelnn To Do List</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dunkelnn's To Dos List</h1>
+    </header>
+    <form>
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Enter To Do here..."
+        autocomplete="off"
+      />
+      <button type="submit" id="add-todo-button">Add ToDo</button>
+      <select class="todos-select hidden" id="todos-select">
+        <option value="all">All</option>
+        <option value="checked">Checked</option>
+        <option value="unchecked">Unchecked</option>
+      </select>
+    </form>
+    <div class="todos-container">
+      <ul class="todos-list"></ul>
+      <span id="clear-all" class="clear-all hidden">Clear All</span>
+    </div>
+    <footer>
+      <p>Made by Dunkelnn</p>
+    </footer>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+/* CUSTOM FONT TYPE */
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+/* VARIABLES */
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+/* GLOBAL */
+html {
+  font-size: 10px;
+  font-family: "Oxygen", sans-serif;
+  background: linear-gradient(45deg, #28313b, #485461);
+  min-height: 100vh;
+}
+
+body {
+  width: 85%;
+  margin: 5rem auto;
+  margin-bottom: 10rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  text-align: center;
+  margin: 3rem auto;
+}
+header h1 {
+  font-size: 3.6rem;
+  color: white;
+  letter-spacing: 0.15rem;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.6rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* FORM, INPUT, BUTTON AND SELECT*/
+form {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+form input {
+  flex: 1;
+  font-size: 1.6rem;
+  color: #8198b3;
+  font-weight: 700;
+  max-width: 50%;
+  min-width: 40rem;
+  padding: 1rem;
+  background-color: #28313b;
+  border: #576677 0.25rem solid;
+}
+form button {
+  font-size: 1.6rem;
+  color: #8198b3;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: #28313b;
+  border: #576677 0.25rem solid;
+  transition: all 0.1s linear;
+}
+form button:hover {
+  color: #28313b;
+  background-color: #8198b3;
+  border-color: #28313b;
+}
+form .todos-select {
+  font-family: "Oxygen", sans-serif;
+  padding: 0.8rem 0.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #8198b3;
+  background-color: #28313b;
+  border: #576677 0.25rem solid;
+  transition: all 0.1s linear;
+}
+form .todos-select:hover {
+  color: #28313b;
+  background-color: #8198b3;
+  border-color: #28313b;
+}
+form > * {
+  margin: 1rem;
+}
+
+/* TODOS CONTAINER, LIST, TODOS AND BUTTONS */
+.todos-container {
+  width: 60%;
+  margin: auto;
+}
+.todos-container .todos-list {
+  list-style: none;
+  width: 100%;
+  margin: 2.5rem auto;
+}
+.todos-container .todos-list i {
+  pointer-events: none;
+}
+
+.todo-div {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  background-color: #2d3844;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  border-radius: 0.2rem;
+}
+.todo-div > * {
+  font-size: 2.2rem;
+  padding: 0.4rem 0.8rem;
+}
+.todo-div li {
+  word-break: break-all;
+  white-space: normal;
+  padding-left: 0;
+  flex: 1;
+  color: rgb(225, 225, 225);
+}
+.todo-div .check-button {
+  border: rgb(45, 75, 45) solid 0.2rem;
+  color: rgb(45, 75, 45);
+  background-color: rgb(90, 160, 90);
+}
+.todo-div .check-button:hover {
+  border: rgb(90, 160, 90) solid 0.2rem;
+  color: rgb(90, 160, 90);
+  background-color: rgb(45, 75, 45);
+}
+.todo-div .delete-button {
+  border: rgb(75, 45, 45) solid 0.2rem;
+  color: rgb(75, 45, 45);
+  background-color: rgb(160, 90, 90);
+}
+.todo-div .delete-button:hover {
+  border: rgb(160, 90, 90) solid 0.2rem;
+  color: rgb(160, 90, 90);
+  background-color: rgb(75, 45, 45);
+}
+
+/* CLEAR ALL SPAN */
+.clear-all {
+  margin: 0 0.5rem;
+  float: right;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(170, 70, 70);
+}
+.clear-all:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.25rem;
+}
+
+/* JS CLASSES */
+.checked {
+  text-decoration: line-through;
+  -webkit-text-decoration-color: rgb(225, 225, 225);
+  text-decoration-color: rgb(225, 225, 225);
+  text-decoration-thickness: 0.25rem;
+  opacity: 0.5;
+}
+
+.removed {
+  opacity: 0;
+  transform: translateX(5px);
+  transition: all 0.3s linear;
+}
+
+.hidden {
+  display: none;
+}
+
+/* MEDIA FOR TABLETS */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+  body {
+    width: 90%;
+  }
+  form input,
+  form button,
+  form .todos-select {
+    font-size: 2rem;
+  }
+  .todos-select {
+    height: 4.7rem;
+  }
+  .todos-container {
+    width: 80%;
+  }
+}
+/* MEDIA FOR PHONES */
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 7px;
+  }
+  body {
+    width: 100%;
+  }
+  form {
+    width: 95%;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  form input {
+    flex: 1;
+    min-width: auto;
+    border-radius: 0;
+    margin: 0;
+  }
+  form button {
+    width: 12rem;
+    margin: 0;
+  }
+  form .todos-select {
+    width: 12rem;
+    border-radius: 0;
+    margin: 0;
+  }
+  .todos-container {
+    width: 85%;
+  }
+  .clear-all {
+    font-size: 2rem;
+    margin-right: 0.75rem;
+  }
+} /*# sourceMappingURL=style.css.map */
