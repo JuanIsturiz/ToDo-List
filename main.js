@@ -131,6 +131,12 @@ function filterTodo(e) {
         break;
     }
   })
+  const children = Array.from(todosList[0].childNodes)
+  if (children.every(todo => todo.style.display === "none") === true) {
+    clearAll.classList.add("hidden");
+  } else {
+    clearAll.classList.remove("hidden");
+  };
 }
 
 //clear all event listener and handler function
